@@ -7,5 +7,5 @@ public class FileItemContext : DbContext
     public FileItemContext(DbContextOptions<FileItemContext> options)
         : base(options) { }
     public FileItemContext() => Database.EnsureCreated();
-    public DbSet<FileItem> FileItems { get; set; }
+    public DbSet<IntermediateClass> FileItems { get; set; }
 }

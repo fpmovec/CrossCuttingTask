@@ -142,6 +142,7 @@ public class RarInDecorator : FileDecorator
                        }
                    }
                    improve.SetExpression(exp);
+                   improve.archiveInStream.Close();
             }
             else
             {

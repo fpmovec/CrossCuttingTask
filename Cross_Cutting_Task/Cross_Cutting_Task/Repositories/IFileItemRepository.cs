@@ -4,13 +4,13 @@ namespace Cross_Cutting_Task.Repositories;
 
 public interface IFileItemRepository
 {
-    Task<bool> AddAsync(FileItem item);
-    Task<bool> UpdateAsync(FileItem item);
-    Task<List<FileItem>> GetAllAsync();
-    List<FileItem> GetItems();
-    Task<FileItem> GetItemByIdAsync(int id);
+    Task<bool> AddAsync(IntermediateClass item);
+    Task<bool> UpdateAsync(IntermediateClass item);
+    Task<List<IntermediateClass>> GetAllAsync();
+    List<IntermediateClass> GetItems();
+    Task<IntermediateClass> GetItemByIdAsync(int id);
     Task<bool> DeleteAsync(int id);
     Task<bool> IsEmpty();
-    Task<bool> MainOperations(FileItem item);
+    Task<bool> MainOperations(IntermediateClass item);
 
 }

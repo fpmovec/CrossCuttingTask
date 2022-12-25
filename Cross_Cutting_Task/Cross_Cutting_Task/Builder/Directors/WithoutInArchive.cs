@@ -13,5 +13,7 @@ public class WithoutInArchiveDirector
         => _build.InFilePathBuilder(inPath)
             .InFileTypeBuilder(inFileType)
             .OutFileTypeBuilder(outFileType)
-            .OutArchiveTypeBuilder(outArchive);
+            .OutArchiveTypeBuilder(outArchive)
+            .InArchiveTypeBuilder("None");
+
 }

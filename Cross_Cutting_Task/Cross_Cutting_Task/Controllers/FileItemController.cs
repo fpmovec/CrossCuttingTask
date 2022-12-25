@@ -36,7 +36,7 @@ namespace Cross_Cutting_Task.Controllers;
 
         [HttpPost]
         [Route("addfile")]
-        public async Task<IActionResult> PostAsync([FromBody] FileItem item)
+        public async Task<IActionResult> PostAsync([FromBody] IntermediateClass item)
         {
             if (item is null)
                 return BadRequest();
@@ -48,7 +48,7 @@ namespace Cross_Cutting_Task.Controllers;
 
         [HttpPut]
         [Route("update/{id}")]
-        public async Task<IActionResult> UpdateAsync(int id, [FromForm] FileItem item)
+        public async Task<IActionResult> UpdateAsync(int id, [FromForm] IntermediateClass item)
         {
             if (await _repository.IsEmpty())
                 return NoContent();

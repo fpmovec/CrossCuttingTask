@@ -28,7 +28,7 @@ public class WebServiceTests
     [Fact]
     public async Task PostAsyncTest1()
     {
-        string json = JsonConvert.SerializeObject(new FileItem
+        string json = JsonConvert.SerializeObject(new IntermediateClass()
         {
             InFilePath = "path",
             InArchiveType = "zip",
