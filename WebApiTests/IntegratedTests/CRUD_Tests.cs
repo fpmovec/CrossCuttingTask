@@ -19,8 +19,7 @@ public class WebServiceTests
     {
         var response = await _client.GetAsync("api/FileItem/fileslist");
         response.EnsureSuccessStatusCode();
-        var responseString = await response.Content.ReadAsStringAsync();
-           
+
         var responseCode = response.StatusCode;
         Assert.Equal(System.Net.HttpStatusCode.OK, responseCode);
     }
