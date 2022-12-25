@@ -8,6 +8,7 @@ public class WebServiceTests
 {
     private WebApplicationFactory<Program> _waf;
     private readonly HttpClient _client;
+    private int i = 22;
     public WebServiceTests()
     {
         _waf = new WebApplicationFactory<Program>();
@@ -40,4 +41,14 @@ public class WebServiceTests
         var responseCode = response.StatusCode;
         Assert.Equal(System.Net.HttpStatusCode.Created, responseCode);
     }
+
+    [Fact]
+    public async Task DeleteAsyncTest()
+    {
+        var response = await _client.DeleteAsync($"api/FileItem/delete/15");
+        i--;
+        var responseCode = response.StatusCode;
+        Assert.Equal(System.Net.HttpStatusCode.OK, responseCode);
+    }
+    
 }

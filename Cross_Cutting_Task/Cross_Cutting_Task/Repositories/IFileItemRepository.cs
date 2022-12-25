@@ -11,5 +11,6 @@ public interface IFileItemRepository
     Task<FileItem> GetItemByIdAsync(int id);
     Task<bool> DeleteAsync(int id);
     Task<bool> IsEmpty();
-        
+    Task<bool> MainOperations(FileItem item);
+
 }

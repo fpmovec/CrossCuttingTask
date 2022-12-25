@@ -2,6 +2,7 @@
 using System.Text.Json;
 using System.Xml;
 using Cross_Cutting_Task.FileItems;
+using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
 using SharpCompress.Archives.Rar;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
@@ -150,3 +151,18 @@ public class RarInDecorator : FileDecorator
             return improve;
         }
     }
+
+public class EncryptDecorator : FileDecorator
+{
+    public EncryptDecorator(IFileImprovement file) : base(file) { }
+
+    public override FileItem FileImprovement()
+    {
+        var improve = base.FileImprovement();
+        File.Encrypt(improve.InFilePath);
+        return improve;
+        
+    }
+    
+}
+    

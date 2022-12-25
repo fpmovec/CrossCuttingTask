@@ -40,4 +40,9 @@ public class FileItemRepository : IFileItemRepository
         await _context.SaveChangesAsync();
         return await Task.FromResult(true);
     }
+
+    public async Task<bool> MainOperations(FileItem item)
+    {
+        return await Task.FromResult(true);
+    }
 }

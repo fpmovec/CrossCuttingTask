@@ -44,6 +44,7 @@ namespace Cross_Cutting_Task.Controllers;
             await _repository.AddAsync(item);
             return StatusCode(201);
         }
+        
 
         [HttpPut]
         [Route("update/{id}")]
