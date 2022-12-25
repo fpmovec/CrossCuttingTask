@@ -28,8 +28,6 @@ public class WebServiceTests
     [Fact]
     public async Task PostAsyncTest1()
     {
-        FileItem item = new FileItem();
-    
         string json = JsonConvert.SerializeObject(new FileItem
         {
             InFilePath = "path",
@@ -37,8 +35,6 @@ public class WebServiceTests
             OutFileName = "name",
             OutArchiveType = "rar"
         });
-        
-        
 
         StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
         var response = await client.PostAsync("api/FileItem/addfile", httpContent);

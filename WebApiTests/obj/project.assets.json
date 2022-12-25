@@ -2,6 +2,43 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "AngouriMath/1.4.0-preview.3": {
+        "type": "package",
+        "dependencies": {
+          "Antlr4.Runtime.Standard": "4.9.2",
+          "GenericTensor": "1.0.4",
+          "HonkSharp": "1.0.3",
+          "PeterO.Numbers": "1.8.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AngouriMath.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/AngouriMath.dll": {}
+        }
+      },
+      "Antlr4.Runtime.Standard/4.9.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {}
+        }
+      },
+      "AutoFixture/4.17.0": {
+        "type": "package",
+        "dependencies": {
+          "Fare": "[2.1.1, 3.0.0)",
+          "System.ComponentModel.Annotations": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoFixture.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoFixture.dll": {}
+        }
+      },
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -44,6 +81,19 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "DotNetZip/1.16.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Permissions": "4.7.0",
+          "System.Text.Encoding.CodePages": "4.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/DotNetZip.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DotNetZip.dll": {}
+        }
+      },
       "EntityFramework/6.4.4": {
         "type": "package",
         "dependencies": {
@@ -64,6 +114,36 @@
         "build": {
           "buildTransitive/netcoreapp3.0/EntityFramework.props": {},
           "buildTransitive/netcoreapp3.0/EntityFramework.targets": {}
+        }
+      },
+      "Fare/2.1.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Fare.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Fare.dll": {}
+        }
+      },
+      "GenericTensor/1.0.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/GenericTensor.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/GenericTensor.dll": {}
+        }
+      },
+      "HonkSharp/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/HonkSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/HonkSharp.dll": {}
         }
       },
       "Microsoft.AspNetCore.Mvc.Testing/6.0.12": {
@@ -1232,6 +1312,15 @@
           "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
       },
+      "PeterO.Numbers/1.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Numbers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Numbers.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -1436,6 +1525,27 @@
             "assetType": "native",
             "rid": "win-x86"
           }
+        }
+      },
+      "SemanticComparison/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/SemanticComparison.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SemanticComparison.dll": {}
+        }
+      },
+      "SharpCompress/0.32.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/SharpCompress.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/SharpCompress.dll": {}
         }
       },
       "Swashbuckle.AspNetCore/6.2.3": {
@@ -2055,7 +2165,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {}
+          "ref/netstandard1.1/System.Reflection.Emit.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.dll": {}
@@ -2069,7 +2179,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll": {}
@@ -2556,7 +2666,7 @@
           "Microsoft.NETCore.Platforms": "5.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/_._": {}
+          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -2823,11 +2933,18 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "AngouriMath": "1.4.0-preview.3",
+          "AutoFixture": "4.17.0",
+          "DotNetZip": "1.16.0",
           "EntityFramework": "6.4.4",
           "Microsoft.AspNetCore.Mvc.Testing": "6.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.1",
           "Newtonsoft.Json": "13.0.2",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "SemanticComparison": "4.1.0",
+          "SharpCompress": "0.32.2",
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "System.IO.Compression": "4.3.0",
+          "System.IO.Compression.ZipFile": "4.3.0"
         },
         "compile": {
           "bin/placeholder/Cross_Cutting_Task.dll": {}
@@ -2842,6 +2959,59 @@
     }
   },
   "libraries": {
+    "AngouriMath/1.4.0-preview.3": {
+      "sha512": "uG6e+LBUcnjWQAyXXaS+7or2AJBIH8bfWDIQoLK+gqbnOzoi5xOuokEBBfVNIHVaptezykcVzgW0ZvLdQu592w==",
+      "type": "package",
+      "path": "angourimath/1.4.0-preview.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PackageReadme.md",
+        "angourimath.1.4.0-preview.3.nupkg.sha512",
+        "angourimath.nuspec",
+        "icon.png",
+        "lib/net472/AngouriMath.dll",
+        "lib/net472/AngouriMath.xml",
+        "lib/netstandard2.0/AngouriMath.dll",
+        "lib/netstandard2.0/AngouriMath.xml",
+        "lib/netstandard2.1/AngouriMath.dll",
+        "lib/netstandard2.1/AngouriMath.xml"
+      ]
+    },
+    "Antlr4.Runtime.Standard/4.9.2": {
+      "sha512": "NH/CZeP56ERa+1w7HqlQKXMVBlkNHOWrjF3holW5XgUdyDP36Mw0SynoNj6jD7UNqhxc+4YYfOWXajO3U1Q2dw==",
+      "type": "package",
+      "path": "antlr4.runtime.standard/4.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "antlr4.runtime.standard.4.9.2.nupkg.sha512",
+        "antlr4.runtime.standard.nuspec",
+        "lib/netstandard2.0/Antlr4.Runtime.Standard.dll",
+        "lib/netstandard2.0/Antlr4.Runtime.Standard.xml"
+      ]
+    },
+    "AutoFixture/4.17.0": {
+      "sha512": "efMRCG3Epc4QDELwdmQGf6/caQUleRXPRCnLAq5gLMpTuOTcOQWV12vEJ8qo678Rj97/TjjxHYu/34rGkXdVAA==",
+      "type": "package",
+      "path": "autofixture/4.17.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "autofixture.4.17.0.nupkg.sha512",
+        "autofixture.nuspec",
+        "icon.png",
+        "lib/net452/AutoFixture.dll",
+        "lib/net452/AutoFixture.pdb",
+        "lib/net452/AutoFixture.xml",
+        "lib/netstandard1.5/AutoFixture.dll",
+        "lib/netstandard1.5/AutoFixture.pdb",
+        "lib/netstandard1.5/AutoFixture.xml",
+        "lib/netstandard2.0/AutoFixture.dll",
+        "lib/netstandard2.0/AutoFixture.pdb",
+        "lib/netstandard2.0/AutoFixture.xml"
+      ]
+    },
     "Azure.Core/1.24.0": {
       "sha512": "+/qI1j2oU1S4/nvxb2k/wDsol00iGf1AyJX5g3epV7eOpQEP/2xcgh/cxgKMeFgn3U2fmgSiBnQZdkV+l5y0Uw==",
       "type": "package",
@@ -2931,6 +3101,23 @@
         "coverlet.collector.nuspec"
       ]
     },
+    "DotNetZip/1.16.0": {
+      "sha512": "CS9sjjXF23FLIbwlLT5k/jXBYxVnLMn01lyAvN/hxFM+UDvSicjTPB9ZMA+Wp/QlvBPbD2pzkAXUp1O50gP/Lw==",
+      "type": "package",
+      "path": "dotnetzip/1.16.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotnetzip.1.16.0.nupkg.sha512",
+        "dotnetzip.nuspec",
+        "lib/net40/DotNetZip.dll",
+        "lib/net40/DotNetZip.pdb",
+        "lib/net40/DotNetZip.xml",
+        "lib/netstandard2.0/DotNetZip.dll",
+        "lib/netstandard2.0/DotNetZip.pdb",
+        "lib/netstandard2.0/DotNetZip.xml"
+      ]
+    },
     "EntityFramework/6.4.4": {
       "sha512": "yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "type": "package",
@@ -2986,6 +3173,56 @@
         "tools/netcoreapp3.0/any/ef6.dll",
         "tools/netcoreapp3.0/any/ef6.pdb",
         "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "Fare/2.1.1": {
+      "sha512": "HaI8puqA66YU7/9cK4Sgbs1taUTP1Ssa4QT2PIzqJ7GvAbN1QgkjbRsjH+FSbMh1MJdvS0CIwQNLtFT+KF6KpA==",
+      "type": "package",
+      "path": "fare/2.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fare.2.1.1.nupkg.sha512",
+        "fare.nuspec",
+        "lib/net35/Fare.dll",
+        "lib/net35/Fare.xml",
+        "lib/netstandard1.1/Fare.dll",
+        "lib/netstandard1.1/Fare.xml"
+      ]
+    },
+    "GenericTensor/1.0.4": {
+      "sha512": "sQsqRbJiwFH37OjriIKQx3VWKuRJ09s/SZdwqL0FreJbFSpbpY1UKeiP8RWsb88QcS2DgyicheyvdJ9YgLnUpQ==",
+      "type": "package",
+      "path": "generictensor/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "generictensor.1.0.4.nupkg.sha512",
+        "generictensor.nuspec",
+        "ico1.png",
+        "lib/net472/GenericTensor.dll",
+        "lib/net472/GenericTensor.xml",
+        "lib/netstandard2.0/GenericTensor.dll",
+        "lib/netstandard2.0/GenericTensor.xml"
+      ]
+    },
+    "HonkSharp/1.0.3": {
+      "sha512": "nV2VQhjXCuF7UC730/Pmb+CLfsdZad2J1JCNqlVCHjgBbn41LWODrJv5LDQPUKYIjZJC66pR9rSmSmyalKF7fA==",
+      "type": "package",
+      "path": "honksharp/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "honksharp.1.0.3.nupkg.sha512",
+        "honksharp.nuspec",
+        "lib/net472/HonkSharp.dll",
+        "lib/net472/HonkSharp.xml",
+        "lib/netstandard2.0/HonkSharp.dll",
+        "lib/netstandard2.0/HonkSharp.xml",
+        "lib/netstandard2.1/HonkSharp.dll",
+        "lib/netstandard2.1/HonkSharp.xml",
+        "logo256.png"
       ]
     },
     "Microsoft.AspNetCore.Mvc.Testing/6.0.12": {
@@ -4964,6 +5201,23 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "PeterO.Numbers/1.8.0": {
+      "sha512": "N8ffDC+jwF1XcA+VfugZO1+wFClOvWjyXzXrstkpdjkgH2LgAfnEZIAFQbKgidHtTh5RAfwhCtH3MSfgZXxXwA==",
+      "type": "package",
+      "path": "petero.numbers/1.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Numbers.dll",
+        "lib/net20/Numbers.xml",
+        "lib/net40/Numbers.dll",
+        "lib/net40/Numbers.xml",
+        "lib/netstandard1.0/Numbers.dll",
+        "lib/netstandard1.0/Numbers.xml",
+        "petero.numbers.1.8.0.nupkg.sha512",
+        "petero.numbers.nuspec"
+      ]
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
       "type": "package",
@@ -5249,6 +5503,43 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "SemanticComparison/4.1.0": {
+      "sha512": "XRc0ogKkELx/2rLhgEh6CnTmYDV5NxRrqWes8s/iH8C0g3kPh6/wfriPvIIQ2sgPdQ/YQ/ij+D4CyFa6MP4iMw==",
+      "type": "package",
+      "path": "semanticcomparison/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/SemanticComparison.dll",
+        "lib/net452/SemanticComparison.pdb",
+        "lib/net452/SemanticComparison.xml",
+        "lib/netstandard1.5/SemanticComparison.dll",
+        "lib/netstandard1.5/SemanticComparison.pdb",
+        "lib/netstandard1.5/SemanticComparison.xml",
+        "lib/netstandard2.0/SemanticComparison.dll",
+        "lib/netstandard2.0/SemanticComparison.pdb",
+        "lib/netstandard2.0/SemanticComparison.xml",
+        "semanticcomparison.4.1.0.nupkg.sha512",
+        "semanticcomparison.nuspec"
+      ]
+    },
+    "SharpCompress/0.32.2": {
+      "sha512": "MSt6TKAg2c0uFFDtf7oACB4DfvXKq5Cvot2e0wjy5nAiVujpIRQ8laiIqCU/VMRGyytasGzg+nODKTkkDjbr/g==",
+      "type": "package",
+      "path": "sharpcompress/0.32.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net461/SharpCompress.dll",
+        "lib/net6.0/SharpCompress.dll",
+        "lib/netcoreapp3.1/SharpCompress.dll",
+        "lib/netstandard2.0/SharpCompress.dll",
+        "lib/netstandard2.1/SharpCompress.dll",
+        "sharpcompress.0.32.2.nupkg.sha512",
+        "sharpcompress.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.2.3": {
@@ -9391,6 +9682,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AngouriMath >= 1.4.0-preview.3",
       "Cross_Cutting_Task >= 1.0.0",
       "EntityFramework >= 6.4.4",
       "Microsoft.AspNetCore.Mvc.Testing >= 6.0.12",
@@ -9445,6 +9737,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "AngouriMath": {
+            "target": "Package",
+            "version": "[1.4.0-preview.3, )"
+          },
           "EntityFramework": {
             "target": "Package",
             "version": "[6.4.4, )"
