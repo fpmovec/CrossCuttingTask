@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cross_Cutting_Task", "Cross_Cutting_Task\Cross_Cutting_Task.csproj", "{9090EA98-9FF1-4BEA-BF66-BBD124DB2CC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{64C70A5D-55CD-4F4F-A093-11AF1DDE925D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApiTests", "WebApiTests", "{A7BB0957-304B-447F-B3D8-D25224ED42B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiTests", "..\WebApiTests\WebApiTests.csproj", "{FE877537-EF4D-44BA-A2BC-FF49B302A380}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9090EA98-9FF1-4BEA-BF66-BBD124DB2CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9090EA98-9FF1-4BEA-BF66-BBD124DB2CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9090EA98-9FF1-4BEA-BF66-BBD124DB2CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9090EA98-9FF1-4BEA-BF66-BBD124DB2CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE877537-EF4D-44BA-A2BC-FF49B302A380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE877537-EF4D-44BA-A2BC-FF49B302A380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE877537-EF4D-44BA-A2BC-FF49B302A380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE877537-EF4D-44BA-A2BC-FF49B302A380}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9090EA98-9FF1-4BEA-BF66-BBD124DB2CC4} = {64C70A5D-55CD-4F4F-A093-11AF1DDE925D}
+		{FE877537-EF4D-44BA-A2BC-FF49B302A380} = {A7BB0957-304B-447F-B3D8-D25224ED42B1}
+	EndGlobalSection
+EndGlobal
