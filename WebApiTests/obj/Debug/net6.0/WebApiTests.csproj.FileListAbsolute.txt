@@ -453,3 +453,13 @@ E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\obj\Debug\net6.0\refin
 E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\obj\Debug\net6.0\WebApiTests.pdb
 E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\obj\Debug\net6.0\WebApiTests.genruntimeconfig.cache
 E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\obj\Debug\net6.0\ref\WebApiTests.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\AngouriMath.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\Antlr4.Runtime.Standard.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\AutoFixture.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\DotNetZip.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\Fare.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\GenericTensor.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\HonkSharp.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\Numbers.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\SemanticComparison.dll
+E:\Programming\RiderProjects\CrossCuttingTask\WebApiTests\bin\Debug\net6.0\SharpCompress.dll

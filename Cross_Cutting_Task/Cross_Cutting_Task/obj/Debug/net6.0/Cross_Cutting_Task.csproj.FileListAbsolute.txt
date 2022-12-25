@@ -370,3 +370,13 @@ E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_T
 E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\obj\Debug\net6.0\Cross_Cutting_Task.pdb
 E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\obj\Debug\net6.0\Cross_Cutting_Task.genruntimeconfig.cache
 E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\obj\Debug\net6.0\ref\Cross_Cutting_Task.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\AngouriMath.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\Antlr4.Runtime.Standard.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\AutoFixture.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\DotNetZip.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\Fare.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\GenericTensor.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\HonkSharp.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\Numbers.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\SemanticComparison.dll
+E:\Programming\RiderProjects\CrossCuttingTask\Cross_Cutting_Task\Cross_Cutting_Task\bin\Debug\net6.0\SharpCompress.dll

@@ -34,6 +34,7 @@
     ".NETCoreApp,Version=v6.0": {
       "WebApiTests/1.0.0": {
         "dependencies": {
+          "AngouriMath": "1.4.0-preview.3",
           "Cross_Cutting_Task": "1.0.0",
           "EntityFramework": "6.4.4",
           "Microsoft.AspNetCore.Mvc.Testing": "6.0.12",
@@ -330,6 +331,49 @@
           "WebApiTests.dll": {}
         }
       },
+      "AngouriMath/1.4.0-preview.3": {
+        "dependencies": {
+          "Antlr4.Runtime.Standard": "4.9.2",
+          "GenericTensor": "1.0.4",
+          "HonkSharp": "1.0.3",
+          "PeterO.Numbers": "1.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/AngouriMath.dll": {
+            "assemblyVersion": "0.1.3.0",
+            "fileVersion": "0.1.3.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/AngouriMath.dll": {}
+        }
+      },
+      "Antlr4.Runtime.Standard/4.9.2": {
+        "runtime": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {
+            "assemblyVersion": "4.9.2.0",
+            "fileVersion": "4.9.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Antlr4.Runtime.Standard.dll": {}
+        }
+      },
+      "AutoFixture/4.17.0": {
+        "dependencies": {
+          "Fare": "2.1.1",
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoFixture.dll": {
+            "assemblyVersion": "4.17.0.0",
+            "fileVersion": "4.17.0.636"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoFixture.dll": {}
+        }
+      },
       "Azure.Core/1.24.0": {
         "dependencies": {
           "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
@@ -371,6 +415,21 @@
         }
       },
       "coverlet.collector/3.1.2": {},
+      "DotNetZip/1.16.0": {
+        "dependencies": {
+          "System.Security.Permissions": "5.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/DotNetZip.dll": {
+            "assemblyVersion": "1.16.0.0",
+            "fileVersion": "1.16.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/DotNetZip.dll": {}
+        }
+      },
       "EntityFramework/6.4.4": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
@@ -392,6 +451,42 @@
         "compile": {
           "lib/netstandard2.1/EntityFramework.SqlServer.dll": {},
           "lib/netstandard2.1/EntityFramework.dll": {}
+        }
+      },
+      "Fare/2.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Fare.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.1/Fare.dll": {}
+        }
+      },
+      "GenericTensor/1.0.4": {
+        "runtime": {
+          "lib/netstandard2.0/GenericTensor.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/GenericTensor.dll": {}
+        }
+      },
+      "HonkSharp/1.0.3": {
+        "runtime": {
+          "lib/netstandard2.1/HonkSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/HonkSharp.dll": {}
         }
       },
       "Microsoft.AspNetCore.Mvc.Testing/6.0.12": {
@@ -1400,6 +1495,17 @@
           "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
       },
+      "PeterO.Numbers/1.8.0": {
+        "runtime": {
+          "lib/netstandard1.0/Numbers.dll": {
+            "assemblyVersion": "1.8.0.0",
+            "fileVersion": "1.8.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.0/Numbers.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -1480,6 +1586,31 @@
             "assetType": "native",
             "fileVersion": "4.6.25512.1"
           }
+        }
+      },
+      "SemanticComparison/4.1.0": {
+        "dependencies": {
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SemanticComparison.dll": {
+            "assemblyVersion": "4.1.0.0",
+            "fileVersion": "4.1.0.29"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/SemanticComparison.dll": {}
+        }
+      },
+      "SharpCompress/0.32.2": {
+        "runtime": {
+          "lib/net6.0/SharpCompress.dll": {
+            "assemblyVersion": "0.32.2.0",
+            "fileVersion": "0.32.2.0"
+          }
+        },
+        "compile": {
+          "lib/net6.0/SharpCompress.dll": {}
         }
       },
       "Swashbuckle.AspNetCore/6.2.3": {
@@ -2357,11 +2488,18 @@
       "xunit.runner.visualstudio/2.4.3": {},
       "Cross_Cutting_Task/1.0.0": {
         "dependencies": {
+          "AngouriMath": "1.4.0-preview.3",
+          "AutoFixture": "4.17.0",
+          "DotNetZip": "1.16.0",
           "EntityFramework": "6.4.4",
           "Microsoft.AspNetCore.Mvc.Testing": "6.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.1",
           "Newtonsoft.Json": "13.0.2",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "SemanticComparison": "4.1.0",
+          "SharpCompress": "0.32.2",
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "System.IO.Compression": "4.3.0",
+          "System.IO.Compression.ZipFile": "4.3.0"
         },
         "runtime": {
           "Cross_Cutting_Task.dll": {}
@@ -4052,6 +4190,27 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AngouriMath/1.4.0-preview.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uG6e+LBUcnjWQAyXXaS+7or2AJBIH8bfWDIQoLK+gqbnOzoi5xOuokEBBfVNIHVaptezykcVzgW0ZvLdQu592w==",
+      "path": "angourimath/1.4.0-preview.3",
+      "hashPath": "angourimath.1.4.0-preview.3.nupkg.sha512"
+    },
+    "Antlr4.Runtime.Standard/4.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NH/CZeP56ERa+1w7HqlQKXMVBlkNHOWrjF3holW5XgUdyDP36Mw0SynoNj6jD7UNqhxc+4YYfOWXajO3U1Q2dw==",
+      "path": "antlr4.runtime.standard/4.9.2",
+      "hashPath": "antlr4.runtime.standard.4.9.2.nupkg.sha512"
+    },
+    "AutoFixture/4.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-efMRCG3Epc4QDELwdmQGf6/caQUleRXPRCnLAq5gLMpTuOTcOQWV12vEJ8qo678Rj97/TjjxHYu/34rGkXdVAA==",
+      "path": "autofixture/4.17.0",
+      "hashPath": "autofixture.4.17.0.nupkg.sha512"
+    },
     "Azure.Core/1.24.0": {
       "type": "package",
       "serviceable": true,
@@ -4073,12 +4232,40 @@
       "path": "coverlet.collector/3.1.2",
       "hashPath": "coverlet.collector.3.1.2.nupkg.sha512"
     },
+    "DotNetZip/1.16.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CS9sjjXF23FLIbwlLT5k/jXBYxVnLMn01lyAvN/hxFM+UDvSicjTPB9ZMA+Wp/QlvBPbD2pzkAXUp1O50gP/Lw==",
+      "path": "dotnetzip/1.16.0",
+      "hashPath": "dotnetzip.1.16.0.nupkg.sha512"
+    },
     "EntityFramework/6.4.4": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "path": "entityframework/6.4.4",
       "hashPath": "entityframework.6.4.4.nupkg.sha512"
+    },
+    "Fare/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HaI8puqA66YU7/9cK4Sgbs1taUTP1Ssa4QT2PIzqJ7GvAbN1QgkjbRsjH+FSbMh1MJdvS0CIwQNLtFT+KF6KpA==",
+      "path": "fare/2.1.1",
+      "hashPath": "fare.2.1.1.nupkg.sha512"
+    },
+    "GenericTensor/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sQsqRbJiwFH37OjriIKQx3VWKuRJ09s/SZdwqL0FreJbFSpbpY1UKeiP8RWsb88QcS2DgyicheyvdJ9YgLnUpQ==",
+      "path": "generictensor/1.0.4",
+      "hashPath": "generictensor.1.0.4.nupkg.sha512"
+    },
+    "HonkSharp/1.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nV2VQhjXCuF7UC730/Pmb+CLfsdZad2J1JCNqlVCHjgBbn41LWODrJv5LDQPUKYIjZJC66pR9rSmSmyalKF7fA==",
+      "path": "honksharp/1.0.3",
+      "hashPath": "honksharp.1.0.3.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Testing/6.0.12": {
       "type": "package",
@@ -4514,6 +4701,13 @@
       "path": "nuget.frameworks/5.11.0",
       "hashPath": "nuget.frameworks.5.11.0.nupkg.sha512"
     },
+    "PeterO.Numbers/1.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-N8ffDC+jwF1XcA+VfugZO1+wFClOvWjyXzXrstkpdjkgH2LgAfnEZIAFQbKgidHtTh5RAfwhCtH3MSfgZXxXwA==",
+      "path": "petero.numbers/1.8.0",
+      "hashPath": "petero.numbers.1.8.0.nupkg.sha512"
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4653,6 +4847,20 @@
       "sha512": "sha512-YhEdSQUsTx+C8m8Bw7ar5/VesXvCFMItyZF7G1AUY+OM0VPZUOeAVpJ4Wl6fydBGUYZxojTDR3I6Bj/+BPkJNA==",
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
+    },
+    "SemanticComparison/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XRc0ogKkELx/2rLhgEh6CnTmYDV5NxRrqWes8s/iH8C0g3kPh6/wfriPvIIQ2sgPdQ/YQ/ij+D4CyFa6MP4iMw==",
+      "path": "semanticcomparison/4.1.0",
+      "hashPath": "semanticcomparison.4.1.0.nupkg.sha512"
+    },
+    "SharpCompress/0.32.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MSt6TKAg2c0uFFDtf7oACB4DfvXKq5Cvot2e0wjy5nAiVujpIRQ8laiIqCU/VMRGyytasGzg+nODKTkkDjbr/g==",
+      "path": "sharpcompress/0.32.2",
+      "hashPath": "sharpcompress.0.32.2.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.2.3": {
       "type": "package",

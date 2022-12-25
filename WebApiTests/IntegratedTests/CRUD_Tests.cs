@@ -6,18 +6,18 @@ namespace WebApiTests.IntegratedTests;
 
 public class WebServiceTests
 {
-    private WebApplicationFactory<Program> waf;
-    private HttpClient client;
+    private WebApplicationFactory<Program> _waf;
+    private readonly HttpClient _client;
     public WebServiceTests()
     {
-        waf = new WebApplicationFactory<Program>();
-        client = waf.CreateClient();
+        _waf = new WebApplicationFactory<Program>();
+        _client = _waf.CreateClient();
     }
 
     [Fact]
     public async Task GetAsyncTest()
     {
-        var response = await client.GetAsync("api/FileItem/fileslist");
+        var response = await _client.GetAsync("api/FileItem/fileslist");
         response.EnsureSuccessStatusCode();
         var responseString = await response.Content.ReadAsStringAsync();
            
@@ -37,7 +37,7 @@ public class WebServiceTests
         });
 
         StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-        var response = await client.PostAsync("api/FileItem/addfile", httpContent);
+        var response = await _client.PostAsync("api/FileItem/addfile", httpContent);
         var responseCode = response.StatusCode;
         Assert.Equal(System.Net.HttpStatusCode.Created, responseCode);
     }
