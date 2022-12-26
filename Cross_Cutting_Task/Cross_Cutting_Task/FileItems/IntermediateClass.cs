@@ -3,6 +3,7 @@ using Cross_Cutting_Task.Builder.BuilderBase;
 using Cross_Cutting_Task.Builder.Directors;
 using Cross_Cutting_Task.Decorator;
 
+
 namespace Cross_Cutting_Task.FileItems;
 
 public class IntermediateClass
@@ -38,21 +39,29 @@ public class IntermediateClass
         return builder.GetFileProduct();    
     }
 
-    public FileItem FIleOutput(FileItem item)
+    // public FileItem FIleOutput(FileItem item)
+    // {
+    //     // if (item.OutArchiveType.ToUpper().Equals("ZIP"))
+    //     // {
+    //     //     ZipOutDecorator zipOutDecorator = new ZipOutDecorator(item);
+    //     //     
+    //     // }
+    //     if (item.OutFileType.ToUpper().Equals("TXT"))
+    //     {
+    //         //TxtOutDecorator
+    //     }
+    // }
+    private void ExpressionParse(FileItem item)
+        => item.Result = item.ExpressionParsing();
+
+    private void WriterResults(FileItem item)
     {
-        // if (item.OutArchiveType.ToUpper().Equals("ZIP"))
-        // {
-        //     ZipOutDecorator zipOutDecorator = new ZipOutDecorator(item);
-        //     
-        // }
-        if (item.OutFileType.ToUpper().Equals("TXT"))
-        {
-            //TxtOutDecorator
-        }
+        OutFileTypes.TypeInfo typeInfo = new OutFileTypes.TypeInfo();
+        typeInfo.TypeOut(item.OutFileType, item);
     }
     public FileItem ArchiveTypeIn(FileItem obj)
     {
-        FileTypes.TypeInfo typeInfo = new FileTypes.TypeInfo();
+        InFileTypes.TypeInfo typeInfo = new InFileTypes.TypeInfo();
         if (obj.InArchiveType.ToUpper().Equals("ZIP"))
         {
             ZipInDecorator zipInDecorator = new ZipInDecorator(obj);
@@ -70,7 +79,10 @@ public class IntermediateClass
             typeInfo.TypeOut(obj.FileImprovement().InFileType,
                 obj.FileImprovement());
         }
-
+        ExpressionParse(obj);
+        Md5OutDecorator md5 = new Md5OutDecorator(obj);
+        obj = md5.FileImprovement();
+        WriterResults(obj);
         return obj;
     }
     

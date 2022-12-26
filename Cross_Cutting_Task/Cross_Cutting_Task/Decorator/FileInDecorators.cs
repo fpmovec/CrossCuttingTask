@@ -125,23 +125,15 @@ public class RarInDecorator : FileDecorator
             if (improve.archiveInStream != null)
             {
                 JsonSerializer serializer = new JsonSerializer();
-                string? exp = "";
-                    var inp = JsonDocument.Parse(improve.archiveInStream);
-               
-                   using (StreamReader sr = new StreamReader(improve.archiveInStream))
-                   {
-                       using (JsonReader reader = new JsonTextReader(sr))
-                       {
-                           while (reader.Read())
-                           {
-                               if (reader.TokenType == JsonToken.StartObject)
-                               {
-                                   exp = serializer.Deserialize<string>(reader);
-                               }
-                           }
-                       }
-                   }
-                   improve.SetExpression(exp);
+                string? expression = "";
+             
+                   
+                    using (var inp = JsonDocument.Parse(improve.archiveInStream))
+                    {
+                        JsonElement exp = inp.RootElement.GetProperty("expression");
+                        expression = exp.GetString();
+                    }
+                    improve.SetExpression(expression);
                    improve.archiveInStream.Close();
             }
             else

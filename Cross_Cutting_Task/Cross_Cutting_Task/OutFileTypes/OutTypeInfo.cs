@@ -2,11 +2,11 @@
 
 namespace Cross_Cutting_Task.OutFileTypes;
 
-public class OutTypeInfo
+public class TypeInfo
 {
     private Dictionary<string, IOutFileTypes> _types;
 
-    public OutTypeInfo()
+    public TypeInfo()
     {
         _types = new Dictionary<string, IOutFileTypes>(3);
         _types.Add("TXT", new OutTxtType { });
@@ -14,9 +14,9 @@ public class OutTypeInfo
         _types.Add("XML", new OutXmlType { });
     }
 
-    public void TypeOut(string type, FileItem item)
+    public void TypeOut(string? type, FileItem item)
     {
-        _types.TryGetValue(type.ToUpper(), out IOutFileTypes? fileTypes);
+        _types.TryGetValue(type?.ToUpper(), out IOutFileTypes? fileTypes);
             fileTypes?.Type(item);
     }
     

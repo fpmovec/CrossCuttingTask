@@ -8,7 +8,6 @@ namespace Cross_Cutting_Task.FileItems;
 
 public class FileItem : IFileImprovement
 {
-    public int Id { get; set; }
     public string? InFilePath { get; set; }
     public string? InArchiveType { get; set; }
     public string? InFileType { get; set; }
@@ -17,6 +16,8 @@ public class FileItem : IFileImprovement
     public string? OutArchiveType { get; set; }
     [JsonProperty("MD5_Result")]
     public string? EncryptedResult { get; set; }
+    [JsonProperty("Result")]
+    public double Result { get; set; }
     [JsonProperty("Expression")]
     private string? Expression { get; set; }
     public Stream? archiveInStream;

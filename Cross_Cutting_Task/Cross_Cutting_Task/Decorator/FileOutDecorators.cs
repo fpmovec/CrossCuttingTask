@@ -15,13 +15,13 @@ class XmlOutDecorator : FileDecorator
     {
         FileItem improve = base.FileImprovement();
 
-        XmlWriter xmlWriter = XmlWriter.Create("E:\\result.xml");
+        XmlWriter xmlWriter = XmlWriter.Create("D:\\result.xml");
         xmlWriter.WriteStartDocument();
 
         xmlWriter.WriteStartElement("Results");
 
         xmlWriter.WriteStartElement("Result");
-        xmlWriter.WriteString(improve.ExpressionParsing().ToString());
+        xmlWriter.WriteString(improve.Result.ToString());
         xmlWriter.WriteEndElement();
 
         xmlWriter.WriteStartElement("MD5_Result");
@@ -49,7 +49,7 @@ class JsonOutDecorator : FileDecorator
             md5exp = improve.EncryptedResult
         },
         Newtonsoft.Json.Formatting.Indented);
-        improve.OutFileName = "E:\\JSONResult.json";
+        improve.OutFileName = "D:\\JSONResult.json";
         File.WriteAllText(improve.OutFileName, json);
         return improve;
     }    
@@ -62,7 +62,7 @@ class TxtOutDecorator : FileDecorator
     public override FileItem FileImprovement()
     {
         FileItem improve = base.FileImprovement();
-        improve.OutFileName = "E:\\TxtResult.txt";
+        improve.OutFileName = "D:\\TxtResult.txt";
         using (StreamWriter output = new StreamWriter(improve.OutFileName))
         {
             output.WriteLine($"Result: {improve.ExpressionParsing()}\n");
@@ -95,11 +95,11 @@ class ZipOutDecorator : FileDecorator
     {
         FileItem improve = base.FileImprovement();
 
-        using (FileStream zipFile = new FileStream("E:\\ZipResult.zip", FileMode.Create))
+        using (FileStream zipFile = new FileStream("D:\\ZipResult.zip", FileMode.Create))
         {
             using (ZipArchive archive = new ZipArchive(zipFile, ZipArchiveMode.Update))
             {
-                ZipArchiveEntry readmeEntry = archive.CreateEntryFromFile(improve.OutFileName, improve.OutFileName);
+               archive.CreateEntryFromFile(improve.OutFileName, improve.OutFileName);
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using Cross_Cutting_Task.FileItems;
+using Cross_Cutting_Task.FileTypes;
 
-namespace Cross_Cutting_Task.FileTypes;
+namespace Cross_Cutting_Task.InFileTypes;
 
 public class TypeInfo
 {
