@@ -38,6 +38,18 @@ public class IntermediateClass
         return builder.GetFileProduct();    
     }
 
+    public FileItem FIleOutput(FileItem item)
+    {
+        // if (item.OutArchiveType.ToUpper().Equals("ZIP"))
+        // {
+        //     ZipOutDecorator zipOutDecorator = new ZipOutDecorator(item);
+        //     
+        // }
+        if (item.OutFileType.ToUpper().Equals("TXT"))
+        {
+            //TxtOutDecorator
+        }
+    }
     public FileItem ArchiveTypeIn(FileItem obj)
     {
         FileTypes.TypeInfo typeInfo = new FileTypes.TypeInfo();
