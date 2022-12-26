@@ -36,6 +36,7 @@ public class RarInDecorator : FileDecorator
         FileItem improve = base.FileImprovement();
         FileStream file = File.OpenRead(improve.InFilePath);
         RarArchive rar = RarArchive.Open(file);
+        
         foreach (RarArchiveEntry entry in rar.Entries)
         {
             improve.archiveInStream = entry.OpenEntryStream();

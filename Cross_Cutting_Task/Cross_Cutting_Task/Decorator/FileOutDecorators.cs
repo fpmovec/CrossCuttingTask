@@ -15,7 +15,8 @@ class XmlOutDecorator : FileDecorator
     {
         FileItem improve = base.FileImprovement();
 
-        XmlWriter xmlWriter = XmlWriter.Create("D:\\result.xml");
+        improve.OutFileName = "D:\\result.xml";
+        XmlWriter xmlWriter = XmlWriter.Create(improve.OutFileName);
         xmlWriter.WriteStartDocument();
 
         xmlWriter.WriteStartElement("Results");
@@ -87,6 +88,15 @@ class Md5OutDecorator : FileDecorator
 
 }
 
+//class EncryptOutDecorator : FileDecorator
+//{
+    // public EncryptOutDecorator(IFileImprovement file) : base(file) { }
+    // public override FileItem FileImprovement()
+    // {
+    //     FileItem improve = base.FileImprovement();
+    //     File.Encrypt(improve.O);
+    // }
+//}
 class ZipOutDecorator : FileDecorator
 {
     public ZipOutDecorator(IFileImprovement file) : base(file) { }
@@ -99,10 +109,34 @@ class ZipOutDecorator : FileDecorator
         {
             using (ZipArchive archive = new ZipArchive(zipFile, ZipArchiveMode.Update))
             {
-               archive.CreateEntryFromFile(improve.OutFileName, improve.OutFileName);
+               archive.CreateEntryFromFile(improve.OutFileName, "result" + Path.GetExtension(improve.OutFileName));
             }
         }
 
         return improve;
     }
 }
+
+// class RarOutDecorator : FileDecorator
+// {
+//     public RarOutDecorator(IFileImprovement file) : base(file) { }
+//
+//     public override FileItem FileImprovement()
+//     {
+//         var improve = base.FileImprovement();
+//         System.Diagnostics.ProcessStartInfo sdp = new System.Diagnostics.ProcessStartInfo();
+//         string cmdArgs = string.Format("A {0} {1} -a -ep",
+//             String.Format("\"{0}\"", @"D:\\resultRAR.rar"),
+//             improve.OutFileName);
+//         sdp.ErrorDialog = true;
+//         sdp.UseShellExecute = true;
+//         sdp.Arguments = cmdArgs;
+//         sdp.FileName = @"E:\\Programms\\WinRar\\WinRar.exe";//Winrar.exe path
+//         sdp.CreateNoWindow = false;
+//         sdp.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+//         System.Diagnostics.Process process = System.Diagnostics.Process.Start(sdp);
+//         process?.WaitForExit();
+//
+//         return improve;
+//     }
+// }

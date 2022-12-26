@@ -38,19 +38,7 @@ public class IntermediateClass
 
         return builder.GetFileProduct();    
     }
-
-    // public FileItem FIleOutput(FileItem item)
-    // {
-    //     // if (item.OutArchiveType.ToUpper().Equals("ZIP"))
-    //     // {
-    //     //     ZipOutDecorator zipOutDecorator = new ZipOutDecorator(item);
-    //     //     
-    //     // }
-    //     if (item.OutFileType.ToUpper().Equals("TXT"))
-    //     {
-    //         //TxtOutDecorator
-    //     }
-    // }
+    
     private void ExpressionParse(FileItem item)
         => item.Result = item.ExpressionParsing();
 
@@ -59,6 +47,21 @@ public class IntermediateClass
         OutFileTypes.TypeInfo typeInfo = new OutFileTypes.TypeInfo();
         typeInfo.TypeOut(item.OutFileType, item);
     }
+
+    private void Compression(FileItem item)
+    {
+        string? aType = item.OutArchiveType?.ToUpper();
+        if (aType.Equals("ZIP"))
+        {
+            ZipOutDecorator zipOutDecorator = new ZipOutDecorator(item);
+            zipOutDecorator.FileImprovement();
+        }
+        else if (aType.Equals("RAR"))
+        {
+            throw new NotImplementedException();
+        }
+    }
+    
     public FileItem ArchiveTypeIn(FileItem obj)
     {
         InFileTypes.TypeInfo typeInfo = new InFileTypes.TypeInfo();
@@ -83,6 +86,7 @@ public class IntermediateClass
         Md5OutDecorator md5 = new Md5OutDecorator(obj);
         obj = md5.FileImprovement();
         WriterResults(obj);
+        Compression(obj);
         return obj;
     }
     
