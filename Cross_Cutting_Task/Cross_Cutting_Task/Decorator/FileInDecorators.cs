@@ -16,6 +16,7 @@ public class ZipInDecorator : FileDecorator
     public override FileItem FileImprovement()
     {
         var improve = base.FileImprovement();
+        File.Decrypt(improve.InFilePath);
         var file = File.OpenRead(improve.InFilePath ?? string.Empty);
         ZipArchive zip = new ZipArchive(file, ZipArchiveMode.Read);
         
@@ -34,7 +35,9 @@ public class RarInDecorator : FileDecorator
     public override FileItem  FileImprovement()
     {
         FileItem improve = base.FileImprovement();
+        File.Decrypt(improve.InFilePath);
         FileStream file = File.OpenRead(improve.InFilePath);
+        
         RarArchive rar = RarArchive.Open(file);
         
         foreach (RarArchiveEntry entry in rar.Entries)
@@ -56,7 +59,6 @@ public class RarInDecorator : FileDecorator
             var improve = base.FileImprovement();
             if (improve.archiveInStream != null)
             {
-
                 using (StreamReader input = new StreamReader(improve.archiveInStream))
                 {
                     improve.SetExpression(input.ReadLine());
@@ -66,6 +68,7 @@ public class RarInDecorator : FileDecorator
             }
             else
             {
+                File.Decrypt(improve.InFilePath);
                using (StreamReader input = new StreamReader(improve.InFilePath))
                {
                     improve.SetExpression(input.ReadLine());
@@ -96,6 +99,7 @@ public class RarInDecorator : FileDecorator
             }
             else
             {
+                File.Decrypt(improve.InFilePath);
                 XmlTextReader xmlRead = new XmlTextReader(improve.InFilePath); // XML
                 xmlRead.WhitespaceHandling = WhitespaceHandling.None;
                 while (xmlRead.Read())
@@ -139,6 +143,7 @@ public class RarInDecorator : FileDecorator
             }
             else
             {
+                File.Decrypt(improve.InFilePath);
                 var obj = JsonConvert.DeserializeObject<JsonFile>(System.IO.File.ReadAllText(improve.InFilePath)); // JSON
                 improve.SetExpression(obj?.expression);
             }
@@ -146,17 +151,5 @@ public class RarInDecorator : FileDecorator
         }
     }
 
-public class EncryptDecorator : FileDecorator
-{
-    public EncryptDecorator(IFileImprovement file) : base(file) { }
 
-    public override FileItem FileImprovement()
-    {
-        var improve = base.FileImprovement();
-        File.Encrypt(improve.InFilePath);
-        return improve;
-        
-    }
-    
-}
     

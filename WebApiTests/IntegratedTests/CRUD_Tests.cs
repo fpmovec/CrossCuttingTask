@@ -34,7 +34,6 @@ public class WebServiceTests
             InFilePath = "D:\\input.xml",
             InArchiveType = "None",
             InFileType = "xml",
-            OutFileName = "name",
             OutFileType = "json",
             OutArchiveType = "zip"
         });
@@ -48,7 +47,7 @@ public class WebServiceTests
     [Fact]
     public async Task DeleteAsyncTest()
     {
-        var response = await _client.DeleteAsync($"api/FileItem/delete/15");
+        var response = await _client.DeleteAsync($"api/FileItem/delete/14");
        
         var responseCode = response.StatusCode;
         Assert.Equal(System.Net.HttpStatusCode.OK, responseCode);

@@ -32,6 +32,9 @@ public class XmlOutDecorator : FileDecorator
         xmlWriter.WriteEndElement();
         xmlWriter.WriteEndDocument();
         xmlWriter.Close();
+        
+        EncryptOutDecorator encryptOutDecorator = new EncryptOutDecorator(improve);
+        improve = encryptOutDecorator.FileImprovement();
         return improve;
     }
 }
@@ -52,6 +55,8 @@ public class JsonOutDecorator : FileDecorator
         Newtonsoft.Json.Formatting.Indented);
         improve.OutFileName = "D:\\JSONResult.json";
         File.WriteAllText(improve.OutFileName, json);
+        EncryptOutDecorator encryptOutDecorator = new EncryptOutDecorator(improve);
+        improve = encryptOutDecorator.FileImprovement();
         return improve;
     }    
 }
@@ -69,10 +74,24 @@ public class TxtOutDecorator : FileDecorator
             output.WriteLine($"Result: {improve.Result}\n");
             output.WriteLine($"Encrypted result: {improve.EncryptedResult}");
         }
+
+        EncryptOutDecorator encryptOutDecorator = new EncryptOutDecorator(improve);
+        improve = encryptOutDecorator.FileImprovement();
         return improve;
     }
 }
+public class EncryptOutDecorator : FileDecorator
+{
+    public EncryptOutDecorator(IFileImprovement file) : base(file) { }
 
+    public override FileItem FileImprovement()
+    {
+        var improve = base.FileImprovement();
+        File.Encrypt(improve.OutFileName);
+        return improve;
+    }
+    
+}
 class Md5OutDecorator : FileDecorator
 {
     public Md5OutDecorator(IFileImprovement file) : base(file) { }
@@ -115,6 +134,8 @@ public class ZipOutDecorator : FileDecorator
         }
 
         improve.OutFileName = "D:\\ZipResult.zip";
+        EncryptOutDecorator encryptOutDecorator = new EncryptOutDecorator(improve);
+        improve = encryptOutDecorator.FileImprovement();
         return improve;
     }
 }
