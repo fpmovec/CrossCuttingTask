@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace Cross_Cutting_Task.Decorator;
 
-class XmlOutDecorator : FileDecorator
+public class XmlOutDecorator : FileDecorator
 {
     public XmlOutDecorator(IFileImprovement file) : base(file) { }
 
@@ -36,7 +36,7 @@ class XmlOutDecorator : FileDecorator
     }
 }
 
-class JsonOutDecorator : FileDecorator
+public class JsonOutDecorator : FileDecorator
 {
     public JsonOutDecorator(IFileImprovement file) : base(file) { }
 
@@ -46,7 +46,7 @@ class JsonOutDecorator : FileDecorator
 
         var json = JsonConvert.SerializeObject(new
         {
-            exp = improve.ExpressionParsing(),
+            exp = improve.Result,
             md5exp = improve.EncryptedResult
         },
         Newtonsoft.Json.Formatting.Indented);
@@ -56,7 +56,7 @@ class JsonOutDecorator : FileDecorator
     }    
 }
 
-class TxtOutDecorator : FileDecorator
+public class TxtOutDecorator : FileDecorator
 {
     public TxtOutDecorator(IFileImprovement file) : base(file) { }
 
@@ -66,7 +66,7 @@ class TxtOutDecorator : FileDecorator
         improve.OutFileName = "D:\\TxtResult.txt";
         using (StreamWriter output = new StreamWriter(improve.OutFileName))
         {
-            output.WriteLine($"Result: {improve.ExpressionParsing()}\n");
+            output.WriteLine($"Result: {improve.Result}\n");
             output.WriteLine($"Encrypted result: {improve.EncryptedResult}");
         }
         return improve;
@@ -97,7 +97,7 @@ class Md5OutDecorator : FileDecorator
     //     File.Encrypt(improve.O);
     // }
 //}
-class ZipOutDecorator : FileDecorator
+public class ZipOutDecorator : FileDecorator
 {
     public ZipOutDecorator(IFileImprovement file) : base(file) { }
 
@@ -105,6 +105,7 @@ class ZipOutDecorator : FileDecorator
     {
         FileItem improve = base.FileImprovement();
 
+        
         using (FileStream zipFile = new FileStream("D:\\ZipResult.zip", FileMode.Create))
         {
             using (ZipArchive archive = new ZipArchive(zipFile, ZipArchiveMode.Update))
@@ -113,6 +114,7 @@ class ZipOutDecorator : FileDecorator
             }
         }
 
+        improve.OutFileName = "D:\\ZipResult.zip";
         return improve;
     }
 }

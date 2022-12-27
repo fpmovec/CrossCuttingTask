@@ -1,7 +1,6 @@
 ﻿using Cross_Cutting_Task.Builder.BuilderBase;
 using Cross_Cutting_Task.Builder.Directors;
 using Cross_Cutting_Task.FileItems;
-using SemanticComparison;
 
 namespace UnitTests.BuilderTests;
 
