@@ -30,8 +30,4 @@
       <ProjectReference Include="..\Cross_Cutting_Task\Cross_Cutting_Task\Cross_Cutting_Task.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="UnitTests" />
-    </ItemGroup>
-
 </Project>

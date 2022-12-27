@@ -9,6 +9,8 @@ namespace Cross_Cutting_Task.FileItems;
 public class IntermediateClass
 {
     public int Id { get; set; }
+    
+    
     public string? InFilePath { get; set; }
     public string? InArchiveType { get; set; }
     public string? InFileType { get; set; }

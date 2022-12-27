@@ -8,7 +8,7 @@ public class WebServiceTests
 {
     private WebApplicationFactory<Program> _waf;
     private readonly HttpClient _client;
-    private int i = 22;
+
     public WebServiceTests()
     {
         _waf = new WebApplicationFactory<Program>();
@@ -24,16 +24,19 @@ public class WebServiceTests
         var responseCode = response.StatusCode;
         Assert.Equal(System.Net.HttpStatusCode.OK, responseCode);
     }
-
+    
+    // TODO #1: Change the PostAsyncTest test method 
     [Fact]
     public async Task PostAsyncTest1()
     {
         string json = JsonConvert.SerializeObject(new IntermediateClass()
         {
-            InFilePath = "path",
-            InArchiveType = "zip",
+            InFilePath = "D:\\input.xml",
+            InArchiveType = "None",
+            InFileType = "xml",
             OutFileName = "name",
-            OutArchiveType = "rar"
+            OutFileType = "json",
+            OutArchiveType = "zip"
         });
 
         StringContent httpContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
@@ -46,7 +49,7 @@ public class WebServiceTests
     public async Task DeleteAsyncTest()
     {
         var response = await _client.DeleteAsync($"api/FileItem/delete/15");
-        i--;
+       
         var responseCode = response.StatusCode;
         Assert.Equal(System.Net.HttpStatusCode.OK, responseCode);
     }
