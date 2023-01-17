@@ -1,0 +1,205 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Service_API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/FileItem/fileslist": {
+      "get": {
+        "tags": [
+          "FileItem"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/FileItem/file/{id}": {
+      "get": {
+        "tags": [
+          "FileItem"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/FileItem/addfile": {
+      "post": {
+        "tags": [
+          "FileItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntermediateClass"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntermediateClass"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntermediateClass"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/FileItem/update/{id}": {
+      "put": {
+        "tags": [
+          "FileItem"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "InFilePath": {
+                    "type": "string"
+                  },
+                  "InArchiveType": {
+                    "type": "string"
+                  },
+                  "InFileType": {
+                    "type": "string"
+                  },
+                  "OutFileType": {
+                    "type": "string"
+                  },
+                  "OutArchiveType": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "Id": {
+                  "style": "form"
+                },
+                "InFilePath": {
+                  "style": "form"
+                },
+                "InArchiveType": {
+                  "style": "form"
+                },
+                "InFileType": {
+                  "style": "form"
+                },
+                "OutFileType": {
+                  "style": "form"
+                },
+                "OutArchiveType": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/FileItem/delete/{id}": {
+      "delete": {
+        "tags": [
+          "FileItem"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntermediateClass": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "InFilePath": {
+            "type": "string",
+            "nullable": true
+          },
+          "InArchiveType": {
+            "type": "string",
+            "nullable": true
+          },
+          "InFileType": {
+            "type": "string",
+            "nullable": true
+          },
+          "OutFileType": {
+            "type": "string",
+            "nullable": true
+          },
+          "OutArchiveType": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

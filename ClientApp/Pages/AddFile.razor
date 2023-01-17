@@ -1,0 +1,62 @@
+﻿@page "/addfile"
+@using ClientNS
+@inject HttpClient httpClient;
+@inject NavigationManager navigationManager
+<h2>Create Product</h2>
+<div class="container">
+    <EditForm Model="@product" OnValidSubmit="@save">
+        @*   <div class="form-group">
+        <label>Product Id</label>
+        <InputText @bind-Value="@product.Id" class="form-control"></InputText>
+        </div>*@
+        <div class="form-group">
+            <label>InFilePath</label>
+            <InputText @bind-Value="@product.InFilePath" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>InArchiveType</label>
+            <InputText @bind-Value="@product.InArchiveType" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>InFileType</label>
+            <InputText @bind-Value="@product.InFileType" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Out File Type</label>
+            <InputText @bind-Value="@product.OutFileType" class="form-control"></InputText>
+        </div>
+        <div class="form-group">
+            <label>Out Archive Type</label>
+            <InputText @bind-Value="@product.OutArchiveType" class="form-control"></InputText>
+        </div>
+
+        <div class="form-group">
+            <input type="reset" value="Clear" class="btn btn-warning">
+            <input type="submit" value="Save" class="btn btn-success">
+        </div>
+    </EditForm>
+</div>
+@code {
+    private IntermediateClass product;
+    private ClientProxy proxy;
+    protected override Task OnInitializedAsync()
+    {
+        product = new IntermediateClass();
+        product.InFilePath = "D:\\input.rar";
+        product.InArchiveType = "rar";
+        product.InFileType = "json";
+        product.OutArchiveType = "zip";
+        product.OutFileType = "xml";
+        //Categorise = new List<string>() { "Electronics", "Electrical", "Food", "Fashion", "Home Appliances" };
+        //Mannfacturers = new List<string>() { "HP", "IBM", "Bajaj", "TATA" };
+        proxy = new ClientProxy("https://localhost:7103/", httpClient);
+        return base.OnInitializedAsync();
+    }
+    private async Task save()
+    {
+        var res = await proxy.AddfileAsync(product);
+
+        navigationManager.NavigateTo("fileslist");
+
+    }
+}

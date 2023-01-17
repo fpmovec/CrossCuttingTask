@@ -1,0 +1,57 @@
+﻿@page "/fileslist"
+@using ClientNS
+@inject HttpClient httpClient;
+@inject NavigationManager navigationManager
+<h2>List of Files</h2>
+<div class="container">
+    <input type="button" value="Add File" class="btn btn-danger" @onclick="navigateToAdd">
+    <table class="table table-bordered table-striped table-dark">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>InFilePath</th>
+                <th>InArchiveType</th>
+                <th>InFileType</th>
+                <th>OutFileType</th>
+                <th>OutArchiveType</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var record in products)
+            {
+                <tr>
+                    <td>@record.Id</td>
+                    <td>@record.InFilePath</td>
+                    <td>@record.InArchiveType</td>
+                    <td>@record.InFileType</td>
+                    <td>@record.OutFileType</td>
+                    <td>@record.OutArchiveType</td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    private List<IntermediateClass> products;
+    private ClientProxy proxy;
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = new List<IntermediateClass>();
+        proxy = new ClientProxy("https://localhost:7103/", httpClient);
+        var result = await proxy.FileslistAsync();
+        products = result.ToList();
+
+    }
+    void navigateToAdd()
+    {
+        navigationManager.NavigateTo("addfile");
+    }
+
+    protected override bool ShouldRender()
+    {
+        return true;
+    }
+}
