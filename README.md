@@ -30,4 +30,11 @@
  
  ![Add File](https://github.com/fpmovec/Images/raw/main/swagger.png)
 
+
+***Структура репозитория:***
+
+- ClientApp - папка с UI;
+- Croos_Cutting_Task - папка с основным кодом(парсинг, веб-сервис, паттерны)ж
+- WebApiTests - папка с тестами для Веб-Сервисаж
+- UnitTests - папка с юнит-тестами паттернов, парсинга
  
