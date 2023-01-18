@@ -31,10 +31,12 @@ public class DecoratorTests
     {
         _xmlOutDecorator = new XmlOutDecorator(_item);
         var obj = _xmlOutDecorator.FileImprovement();
+        var expectedExtension = ".XML";
 
         var isExist = File.Exists(obj.OutFileName);
-        
+        var actualExtension = Path.GetExtension(obj.OutFileName);
         Assert.True(isExist);
+        Assert.Equal(expectedExtension, actualExtension?.ToUpper());
     }
 
     [Fact]
@@ -42,10 +44,13 @@ public class DecoratorTests
     {
         _jsonOutDecorator = new JsonOutDecorator(_item);
         var obj = _jsonOutDecorator.FileImprovement();
-
+        var expectedExtension = ".JSON";
+        
         var isExist = File.Exists(obj.OutFileName);
+        var actualExtension = Path.GetExtension(obj.OutFileName);
         
         Assert.True(isExist);
+        Assert.Equal(expectedExtension, actualExtension?.ToUpper());
     }
 
     [Fact]
@@ -53,21 +58,26 @@ public class DecoratorTests
     {
         _txtOutDecorator = new TxtOutDecorator(_item);
         var obj = _txtOutDecorator.FileImprovement();
+        var expectedExtension = ".TXT";
 
         var isExist = File.Exists(obj.OutFileName);
+        var actualExtension = Path.GetExtension(obj.OutFileName);
         
         Assert.True(isExist);
+        Assert.Equal(expectedExtension, actualExtension?.ToUpper());
     }
 
     [Fact]
     public void ZipOutDecoratorTest()
     {
         _zipOutDecorator = new ZipOutDecorator(new TxtOutDecorator(_item).FileImprovement());
-
         var obj = _zipOutDecorator.FileImprovement();
+        var expectedExtension = ".ZIP";
 
         var isExist = File.Exists(obj.OutFileName);
+        var actualExtension = Path.GetExtension(obj.OutFileName);
         
         Assert.True(isExist);
+        Assert.Equal(expectedExtension, actualExtension?.ToUpper());
     }
 }
