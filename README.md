@@ -6,7 +6,7 @@
  - Чтение архивированных файлов zip, rar;
  - Парсинг математического выражения любой сложности;
  - Предоставляет RESTful Service с SwaggerUI;
- - UI на базе компонентов Blazor;
+ - UI на базе Blazor Framework;
  - Запись истории файлов в базу даннных(SQL);
  - Тестирование методов RESTful Service(WebApi Testing);
  - Запись в файлы json, xml, txt;
