@@ -70,8 +70,9 @@ public class IntermediateClass
         if (obj.InArchiveType.ToUpper().Equals("ZIP"))
         {
             ZipInDecorator zipInDecorator = new ZipInDecorator(obj);
-            typeInfo.TypeOut(zipInDecorator.FileImprovement().InFileType,
-                zipInDecorator.FileImprovement());
+            var improve = zipInDecorator.FileImprovement();
+            typeInfo.TypeOut(improve.InFileType,
+                improve);
         }
         else if (obj.InArchiveType.ToUpper().Equals("RAR"))
         {

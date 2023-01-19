@@ -32,4 +32,8 @@
       <_ContentIncludedByDefault Remove="Pages\_ValidationScriptsPartial.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Include="..\.editorconfig" Link=".editorconfig" />
+    </ItemGroup>
+
 </Project>

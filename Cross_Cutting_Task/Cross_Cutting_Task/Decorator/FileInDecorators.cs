@@ -16,12 +16,24 @@ public class ZipInDecorator : FileDecorator
     public override FileItem FileImprovement()
     {
         var improve = base.FileImprovement();
-        File.Decrypt(improve.InFilePath);
-        var file = File.OpenRead(improve.InFilePath ?? string.Empty);
-        ZipArchive zip = new ZipArchive(file, ZipArchiveMode.Read);
         
+          File.Decrypt(improve.InFilePath);
+       if (improve.archiveInStream == null)    
+           improve.archiveInStream = File.OpenRead(improve.InFilePath ?? string.Empty);
+        ZipArchive zip = new ZipArchive(improve.archiveInStream, ZipArchiveMode.Read);
+       
         foreach (var item in zip.Entries)
         {
+            if (Path.GetExtension(item.FullName).ToUpper() == ".ZIP")
+            {
+                improve.archiveInStream = item.Open();
+                return new ZipInDecorator(improve).FileImprovement();
+            }
+            if (Path.GetExtension(item.FullName).ToUpper() == ".RAR")
+            {
+                improve.archiveInStream = item.Open();
+                return new RarInDecorator(improve).FileImprovement();
+            }
             improve.archiveInStream = item.Open();
         }
 
@@ -39,11 +51,19 @@ public class RarInDecorator : FileDecorator
         FileStream file = File.OpenRead(improve.InFilePath);
         
         RarArchive rar = RarArchive.Open(file);
-        
         foreach (RarArchiveEntry entry in rar.Entries)
         {
+            if (Path.GetExtension(entry.Key).ToUpper() == ".ZIP")
+            {
+                improve.archiveInStream = entry.OpenEntryStream();
+                return new ZipInDecorator(improve).FileImprovement();
+            }
+            if (Path.GetExtension(entry.Key).ToUpper() == ".RAR")
+            {
+                improve.archiveInStream = entry.OpenEntryStream();
+                return new RarInDecorator(improve).FileImprovement();
+            }
             improve.archiveInStream = entry.OpenEntryStream();
-            return improve;
         }
         return improve;
     }
@@ -61,6 +81,7 @@ public class RarInDecorator : FileDecorator
             {
                 using (StreamReader input = new StreamReader(improve.archiveInStream))
                 {
+             
                     improve.SetExpression(input.ReadLine());
                 }
                 improve.archiveInStream.Close();
@@ -144,7 +165,7 @@ public class RarInDecorator : FileDecorator
             else
             {
                 File.Decrypt(improve.InFilePath);
-                var obj = JsonConvert.DeserializeObject<JsonFile>(System.IO.File.ReadAllText(improve.InFilePath)); // JSON
+                var obj = JsonConvert.DeserializeObject<JsonFile>(System.IO.File.ReadAllText(improve.InFilePath)); 
                 improve.SetExpression(obj?.expression);
             }
             return improve;
