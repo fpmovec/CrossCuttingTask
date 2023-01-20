@@ -47,10 +47,11 @@ public class RarInDecorator : FileDecorator
     public override FileItem  FileImprovement()
     {
         FileItem improve = base.FileImprovement();
-        File.Decrypt(improve.InFilePath);
-        FileStream file = File.OpenRead(improve.InFilePath);
         
-        RarArchive rar = RarArchive.Open(file);
+        
+           improve.archiveInStream = File.OpenRead(improve.InFilePath);
+        
+        RarArchive rar = RarArchive.Open(improve.archiveInStream);
         foreach (RarArchiveEntry entry in rar.Entries)
         {
             if (Path.GetExtension(entry.Key).ToUpper() == ".ZIP")
